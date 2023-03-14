@@ -1,0 +1,106 @@
+import tkinter as tik
+from tkinter import *
+from tkinter.ttk import *
+import time
+import datetime
+
+
+root=tik.Tk()
+root.title("Study timer")
+root.geometry("400x600")
+
+ 
+# Create class that acts as a countdown
+def countdown():
+
+    h = int(entery_h.get())
+    m = int(entery_m.get())
+    s = int(entery_s.get())
+
+ 
+    # Calculate the total number of seconds
+    total_seconds = h * 3600 + m * 60 + s
+ 
+    # While loop that checks if total_seconds reaches zero
+    # If not zero, decrement total time by one second
+    while total_seconds >= 0:
+ 
+        # Timer represents time left on countdown
+        timer = datetime.timedelta(seconds = total_seconds)
+        
+        # Prints the time left on the timer
+        print(timer)
+        
+        #var.set(timer)
+        #label_result["text"]=f"  {timer}    "
+ 
+        # Delays the program one second
+        time.sleep(1)
+ 
+        # Reduces total time by one second
+        total_seconds -= 1
+    label_result.config(text=timer)
+    
+ 
+# Inputs for hours, minutes, seconds on timer
+entery_h  = tik.Entry(root, font=("Agency FB", 40), foreground="purple1", width=5)
+entery_h.grid(column=1, row=1)
+entery_m  = tik.Entry(root, font=("Agency FB", 40), foreground="purple1", width=5)
+entery_m.grid(column=1, row=2)
+entery_s  = tik.Entry(root, font=("Agency FB", 40), foreground="purple1", width=5)
+entery_s.grid(column=1, row=3)
+
+button=tik.Button(root,font=("Agency FB",30),text="Calculate",foreground='violet red',command=countdown)
+button.grid(column=1,row=4)
+
+label_result=tik.Label(root,text="--:--:--", font=("Agency FB", 50),foreground="indianred1")
+label_result.grid(column=2,row=1)
+
+
+#var=StringVar()
+
+#label_result=tik.Label(root,textvariable=var, font=("Agency FB", 50),foreground="indianred1")
+#label_result.grid(column=2,row=1)
+
+
+
+root.mainloop()
+
+
+MULTIPLE TABS :
+
+
+import tkinter as tik
+from tkinter import *
+from tkinter.ttk import *
+from tkinter import ttk
+import time 
+
+root=tik.Tk()
+root.title("Study timer")
+root.geometry("400x600")
+def tab1():
+
+    def tab2():
+        
+        s = Style()
+        s.theme_use("default")
+        s.configure("TProgressbar", thickness=10,background="blue",bd=0)
+        pb = Progressbar(root, style="TProgressbar",maximum=4,value=1).place(x=100,y=100)
+
+        button_end = tik.Button(root,text="tab1",bg="#ea3548",fg="#fff",bd=0,width=10,height=2,font=("arial 10 bold"),command=tab1).place(x=300,y=540)
+
+
+    s = Style()
+    s.theme_use("default")
+    s.configure("TProgressbar", thickness=10,background="red",bd=0)
+    pb = Progressbar(root, style="TProgressbar",maximum=4,value=1).place(x=100,y=100)
+    
+
+    button_end = tik.Button(root,text="tab2",bg="#ea3548",fg="#fff",bd=0,width=10,height=2,font=("arial 10 bold"),command=tab2).place(x=300,y=540)
+tab1()
+
+root.mainloop()
+
+
+

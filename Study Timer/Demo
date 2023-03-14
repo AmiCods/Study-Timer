@@ -1,0 +1,98 @@
+#h=int(hrs.get())
+            #m=int(mint.get())
+            #s=int(sec.get())
+
+
+
+
+            if m==0 and h==0 :
+
+
+                ph1=s*25/100
+
+                pro_1['maximum']=ph1
+                pro_1.start()
+
+            elif s==ph1 :
+                pro_1.stop()
+
+                def note(title,message):
+                    notification.notify(
+                    title = title,
+                    app_icon="clock.ico",
+                    message = message,
+                    timeout = 50,
+                    )
+           #pro_1.stop()
+                if __name__ == '__main__':
+                    note("hi there ","How are you bhai happy brithday to you!")
+
+
+                #ph2=s*50/100
+
+                #pro_2['maximum']=ph2
+                #pro_2.start()
+
+                #ph3=s*75/100
+
+                #pro_3['maximum']=ph3
+                #pro_3.start()
+
+                #pro_4['maximum']=s
+                #pro_4.start()
+
+            elif pro_1['value']==ph1 :
+                pro_1.stop()
+
+
+            elif h==0:
+
+                maxm=m*60
+
+                pro_4['maximum']=maxm
+                pro_4.start()
+
+                ph1=maxm*25/100
+
+                pro_1['maximum']=ph1
+                pro_1.start()
+
+                ph2=maxm*50/100
+
+                pro_2['maximum']=ph2
+                pro_2.start()
+
+                ph3=maxm*75/100
+
+                pro_3['maximum']=ph3
+                pro_3.start()
+
+            else:    
+                maxh=h*3600
+
+                pro_4['maximum']=maxh
+                pro_4.start()
+
+                ph1=maxh*25/100
+
+                pro_1['maximum']=ph1
+                pro_1.start()
+
+                ph2=maxh*50/100
+
+                pro_2['maximum']=ph2
+                pro_2.start()
+
+                ph3=maxh*75/100
+
+                pro_3['maximum']=ph3
+                pro_3.start()
+        #if pro_1['value']<ph1 :
+         #       pro_1.stop()
+
+        pro_1.stop()
+        pro_2.stop()
+        pro_3.stop()
+        pro_4.stop()  
+
+       
